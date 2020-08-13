@@ -131,6 +131,29 @@ int update_item(int newval,int oldval)
 	next->info=newval;
 	return 1;
 }
+void reverse()
+{
+	struct node * prev,*current,*next;
+	prev=NULL;
+	current=start;
+	while(current!=NULL)
+	{
+		next=current->link;
+		current->link=prev;
+		
+		prev=current;
+		current=next;		
+	}
+	start=prev;
+}
+//VVI
+void printReverse(struct node * ptr)
+{
+	if(ptr==NULL)
+		return;		
+	printReverse(ptr->link);
+	printf(" %d ",ptr->info);
+}
 main()
 {		
 	int ch=1,temp,val,res;
@@ -147,6 +170,8 @@ main()
 		printf("\n7: Remove given value");
 		printf("\n8: Update value ");
 		printf("\n9: Display list");
+		printf("\n10: Reverse the list");
+		printf("\n11: Print the list in reverse order without actual list reversal");
 		printf("\n0: Exit");
 		printf("\n\n Choose an option: ");
 		scanf("%d",&ch);
@@ -204,8 +229,16 @@ main()
 						printf("Item %d not found",val);
 					break;
 			case  9:display();
+					break;
+					
+			case 10: reverse();
+					printf("\nReversed successfully");
+					break;
+					
+			case 11:printf("\nThe reverse of list is: ");
+					printReverse(start);
+					
 			
 		}
 	}
 }
-
