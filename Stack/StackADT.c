@@ -61,6 +61,7 @@ int main()
 				break;
 			case 4: printf("\nThe stack state is : ");
 					display();
+					break;
 			default:printf("\nINVALID CHOICE");
 		}
 	}
