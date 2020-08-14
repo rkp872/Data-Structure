@@ -82,6 +82,9 @@ main()
 					update_item(temp,val);
 					break;
 			case  9:display();
+				break;
+			default:printf("\nINVALID CHOICE");
+			
 			
 		}
 	}
