@@ -237,6 +237,8 @@ main()
 					
 			case 11:printf("\nThe reverse of list is: ");
 					printReverse(start);
+				
+			default:printf("\nINVALID CHOICE");
 					
 			
 		}
